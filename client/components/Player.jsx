@@ -1,33 +1,23 @@
-/* eslint-disable promise/catch-or-return */
-import React, { useState } from 'react'
+import React from 'react'
 
-import { getSuperhero } from '../api'
-
-function Player() {
-  const [superhero, setSuperhero] = useState(null)
-
-  const superheroData = () => {
-    getSuperhero().then((obj) => {
-      setSuperhero(obj)
-    })
-  }
-
+function Player(props) {
+  
+  const hero = props.hero
   return (
     <div>
-      <button onClick={superheroData}>{`Let's Go`}</button>
-      {superhero && (
+      {hero && (
         <div className="superhero">
-          <h2>{superhero.name}</h2>
-          <img src={superhero.images.sm} />
+          <h2>{hero.name}</h2>
+          <img src={hero.images.sm} />
           <div className="stats">
             <h3>Stats</h3>
             <ul>
-              <li>Intelligence: {superhero.powerstats.intelligence}</li>
-              <li>Strength: {superhero.powerstats.strength}</li>
-              <li>Speed: {superhero.powerstats.speed}</li>
-              <li>Durability: {superhero.powerstats.durability}</li>
-              <li>Power: {superhero.powerstats.power}</li>
-              <li>Combat: {superhero.powerstats.combat}</li>
+              <li>Intelligence: {hero.powerstats.intelligence}</li>
+              <li>Strength: {hero.powerstats.strength}</li>
+              <li>Speed: {hero.powerstats.speed}</li>
+              <li>Durability: {hero.powerstats.durability}</li>
+              <li>Power: {hero.powerstats.power}</li>
+              <li>Combat: {hero.powerstats.combat}</li>
             </ul>
           </div>
         </div>
