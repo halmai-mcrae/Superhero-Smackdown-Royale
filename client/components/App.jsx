@@ -3,7 +3,8 @@ import React from 'react'
 function App() {
   return (
     <div>
-      <h1>Widgets for the win!</h1>
+      <h1>Superhero Smackdown Royale!</h1>
+      <h3>Choose your hero</h3>
     </div>
   )
 }
