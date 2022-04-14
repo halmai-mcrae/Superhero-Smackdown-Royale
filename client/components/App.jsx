@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 
 import { getSuperhero } from '../api'
 
+import Header from './Header.jsx'
+
 function App() {
 
   const [superhero, setSuperhero] = useState(null)
@@ -15,8 +17,7 @@ function App() {
 
   return (
     <div>
-      <h1>Superhero Smackdown Royale!</h1>
-      <h3>Choose your hero</h3>
+      <Header />
       <button onClick={superheroData}>click</button>
     </div>
   )
