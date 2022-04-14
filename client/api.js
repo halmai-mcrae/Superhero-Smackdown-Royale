@@ -1,5 +1,5 @@
 import request from 'superagent'
 
-const widgetUrl = '/api/v1/widgets/'
+const serverUrl = '/api/v1/superhero-smackdown/'
 
-export function getWidgets() {}
+export function getSuperheros() {}
