@@ -1,24 +1,16 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 import Header from './Header.jsx'
-
 import Footer from './Footer'
-
-import Player from './Player.jsx'
-
-import Winner from './Winner.jsx'
-
+import PlayerWin from './PlayerWin.jsx'
 
 function App() {
-
-
+  
   return (
     <>
     <div>
       <Header />
-      <Player />
-      <Player />
-      <Winner />
+      <PlayerWin />
     </div>
     
     <div>
