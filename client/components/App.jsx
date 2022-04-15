@@ -10,6 +10,10 @@ function App() {
     <>
     <div>
       <Header />
+    </div>
+      
+    <div className="container">
+      
       <PlayerWin />
     </div>
     

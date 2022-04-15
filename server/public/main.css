@@ -1,10 +1,5 @@
 @import url('http://fonts.cdnfonts.com/css/hammer-scout');
 
-/* html, body {
-    background: linear-gradient(to bottom, #ffff66 0%, #ff6600 100%);
-
-} */
-
 .header {
   text-align: center;
   color: #4040a1;
@@ -22,4 +17,46 @@
   width:100%;
   height:60px;   /* Height of the footer */
   background: linear-gradient(to top, #ffff66 0%, #ff6600 100%);
+}
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-height: 100%;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 200px 200px 200px;
+  grid-template-rows: 600px;
+  justify-items: center;
+  max-height: 75vh;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10px;
+  row-gap: 10px;
+}
+
+.buttonContainer {
+  
+}
+
+.player {
+
+}
+
+.winner {
+
+}
+
+
+.superhero {
+
+}
+
+
+.stats {
+  
 }
