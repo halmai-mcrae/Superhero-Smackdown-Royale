@@ -7,7 +7,7 @@ function Player(props) {
     <div>
       {hero && (
         <div className="superhero">
-          <h2>{hero.name}</h2>
+          <h2 className="hero-name">{hero.name}</h2>
           <img src={hero.images.sm} />
           <div className="stats">
             <h3>Stats</h3>
