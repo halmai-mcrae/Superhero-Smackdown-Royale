@@ -25,7 +25,6 @@ const [superheroes, setSuperheroes] = useState(null)
     
     return <>
           <button onClick={loadSuperheroData}>{`Let's Go`}</button>
-          <p>Loading...</p>
     </>
   }
 
