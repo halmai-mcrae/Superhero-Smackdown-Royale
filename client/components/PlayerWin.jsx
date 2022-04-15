@@ -1,22 +1,30 @@
 import React, { useState } from 'react'
 import Player from './Player.jsx'
-import Winner from './Winner.jsx'
+
 
 import { getSuperhero } from '../api'
+import Winner from './Winner.jsx'
 
-function PlayerWin() {
+function PlayerWin () {
   const [superheroes, setSuperheroes] = useState(null)
   const [error, setError] = useState(null)
+  const [winner, setWinner] = useState(null)
+  const [stats, setStats] = useState(null)
+  const [ display, setDisplay ] = useState('Display Winner')
 
   const loadSuperheroData = () => {
-    Promise.all([getSuperhero(), getSuperhero()])
-      .then((both) => {
-        setError(null)
-        setSuperheroes(both)
-      })
-      .catch((e) => {
-        setError(e)
-      })
+    Promise.all([
+      getSuperhero(),
+      getSuperhero()
+    ]).then(both => {
+      setDisplay('Display Winner')
+      setWinner(null)
+      setStats(null)
+      setError(null)
+      setSuperheroes(both)
+    }).catch(e => {
+      setError(e)
+    })
   }
 
   if (superheroes == null) {
@@ -36,19 +44,18 @@ function PlayerWin() {
 
   return (
     <>
-      <div>
-        <button
-          className="letsGo"
-          onClick={loadSuperheroData}
-        >{`Let's Go`}</button>
-      </div>
+
+    <div>
+<button className="letsGo" onClick={loadSuperheroData}>{`Let's Go`}</button>
+  </div><br></br>
+
       <br></br>
       <div className="grid">
         <div className="player">
           <Player hero={superheroes[0]} />
         </div>
         <div className="display-winner">
-          <Winner heroes={superheroes} />
+          <Winner heroes={superheroes} winner={winner} setWinner={setWinner} stats={stats} setStats={setStats} display={display} setDisplay={setDisplay}/>
         </div>
         <div className="player">
           <Player hero={superheroes[1]} />

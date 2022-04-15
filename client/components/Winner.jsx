@@ -1,40 +1,45 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 function Winner (props) {
-
+    
     const heroes = props.heroes
+    const { winner, setWinner, stats, setStats, display, setDisplay } = props
+    
 
     const displayPowerStats = () => {
         const statArray = heroes.map(element => element.powerstats )
         let hero1 = Object.values(statArray[0])
         let hero2 = Object.values(statArray[1])
 
-        hero1 = hero1.reduce((a, b) => b - a)
-        hero2 = hero2.reduce((a, b) => b - a)
-        
+        hero1 = (hero1.reduce((a, b) => b + a)) / 5
+        hero2 = (hero2.reduce((a, b) => b + a)) / 5
+
+        let winner = null
         if (hero1 > hero2) {
-            console.log(heroes[0].name + ' wins!')
-            setWinner(heroes[0].name)
+            winner = heroes[0].name
+            setWinner(winner + ' wins!')
         } else {
-            console.log(heroes[1].name + ' wins!')
-            setWinner(heroes[1].name)
+            winner = heroes[1].name
+            setWinner(winner + ' wins!')
         }
-    }
-
-
-    const [winner, setWinner] = useState(false)
-
-
+        setDisplay(null)
+        const string = `${heroes[0].name}-${hero1}/100
+                        vs.
+                        ${heroes[1].name}-${hero2}/100`
+        setStats(string)
+    } 
 
     return (
-      <>
-        <div>
-            <button className= 'winner' onClick = {displayPowerStats}>Display Winner</button>
-            <p>{winner} Wins!</p>
+        <>
+        <div className= 'winner'>
+            <button onClick={displayPowerStats}>{display}</button>
+            <div>
+                <p className='name'>{winner}</p>
+                <p>{stats}</p>
+          </div>
         </div>
         </>
     )
-
 }
 
 export default Winner

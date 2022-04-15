@@ -2,13 +2,17 @@
 @import url('http://fonts.cdnfonts.com/css/delayed');
 @import url('http://fonts.cdnfonts.com/css/vtc-sunday-komix');
 
+html, body {
+  background-image: url('./comic.webp');
+}
+
 .header {
   text-align: center;
   color: #4040a1;
   font-family: 'Hammer Scout', sans-serif;
   height:60px;
   margin-bottom: 30px;
-  background: linear-gradient(to bottom, #ffff66 0%, #ff6600 100%);
+  background: linear-gradient(to bottom, #ffff66 0%, #bf5b18 100%);
 }
 
 .footer {
@@ -20,9 +24,13 @@
   bottom:0;
   width:100%;
   height:60px;   /* Height of the footer */
-  background: linear-gradient(to top, #ffff66 0%, #ff6600 100%);
+  background: linear-gradient(to top, #ffff66 0%, #bf5b18 100%);
 }
 
+button {
+  background-color: #66fab7;
+  border-style: hidden;
+}
 
 .container {
   display: flex;
@@ -34,7 +42,7 @@
 .grid {
   display: grid;
   grid-template-columns: 200px 200px 200px;
-  grid-template-rows: 550px;
+  grid-template-rows: 560px;
   justify-items: center;
   max-height: 50vh;
   justify-content: center;
@@ -71,9 +79,9 @@
   left: 5px;
 }
 
-.player {
+/* .player {
 
-}
+} */
 
 .winner {
   background-color: #66fab7;
@@ -109,20 +117,38 @@
 }
 
 .player {
-  background-color: rgb(243, 149, 255);
+  background-color: #837aff;
   padding: 20px;
   border-radius: 20px;
-  height: 550px;
-}
-
-.hero-name {
-  font-family: 'VTCSundaykomix', sans-serif;
-  height:75px;
-}
-
-.stats {
+  height: 560px;
   
 }
 
+.hero-name {
+  font-family: 'VTCSundaykomixcaps', sans-serif;
+  height:75px;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  font-weight: bold;
+}
 
+.hero-image {
+  padding-bottom: 10px;
+}
+
+.stats-title {
+  font-family: 'VTCSundaykomixcaps', sans-serif;
+  font-weight: bold;
+}
+
+.stats {
+  font-family: 'VTCSundaykomix', sans-serif;
+  font-weight: bold;
+  list-style: none
+}
+
+.name {
+  font-size: 2rem;
+}
 
