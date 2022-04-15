@@ -32,6 +32,7 @@ const [superheroes, setSuperheroes] = useState(null)
   if (error != null) {
     return <p>Something went wrong: {error.message}</p>
   }
+  
   return (
     <>
 <div className="buttonContainer">
