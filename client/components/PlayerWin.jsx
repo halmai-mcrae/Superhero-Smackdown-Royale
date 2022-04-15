@@ -29,7 +29,8 @@ function PlayerWin () {
   if (superheroes == null) {
     
     return <>
-          <button onClick={loadSuperheroData}>{`Let's Go`}</button>
+
+          <button className='letsGo' onClick={loadSuperheroData}>{`Let's Go`}</button>
     </>
   }
 
@@ -50,8 +51,9 @@ function PlayerWin () {
       </div>
       <div className="winner">
       <Winner heroes={superheroes} winner={winner} setWinner={setWinner} stats={stats} setStats={setStats}/>
+
       </div>
-      <div className="player">
+      <div>
       <Player hero={superheroes[1]}/>
       </div>
 
