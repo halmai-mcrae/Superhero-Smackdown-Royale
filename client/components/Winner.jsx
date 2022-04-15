@@ -11,15 +11,17 @@ function Winner (props) {
 
         hero1 = hero1.reduce((a, b) => b - a)
         hero2 = hero2.reduce((a, b) => b - a)
-        
+
+        let winner = null
         if (hero1 > hero2) {
-            console.log(heroes[0].name + ' wins!')
-            setWinner(heroes[0].name)
+            winner = heroes[0].name
         } else {
-            console.log(heroes[1].name + ' wins!')
-            setWinner(heroes[1].name)
+            winner = heroes[0].name
         }
-    }
+
+        //Display winner and win stats
+
+    } 
 
 
     const [winner, setWinner] = useState(false)
@@ -29,7 +31,7 @@ function Winner (props) {
     return (
         <div className= 'winner'>
             <button onClick = {displayPowerStats}>Display Winner</button>
-           <p>{winner} Wins!</p>
+           <p>{winner} </p>
         </div>
     )
 
