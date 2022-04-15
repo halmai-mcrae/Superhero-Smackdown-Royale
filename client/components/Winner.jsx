@@ -1,40 +1,38 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 function Winner (props) {
-
+    
     const heroes = props.heroes
+    const { winner, setWinner, stats, setStats } = props
 
     const displayPowerStats = () => {
         const statArray = heroes.map(element => element.powerstats )
         let hero1 = Object.values(statArray[0])
         let hero2 = Object.values(statArray[1])
 
-        hero1 = hero1.reduce((a, b) => b - a)
-        hero2 = hero2.reduce((a, b) => b - a)
+        hero1 = (hero1.reduce((a, b) => b + a)) / 5
+        hero2 = (hero2.reduce((a, b) => b + a)) / 5
 
         let winner = null
         if (hero1 > hero2) {
             winner = heroes[0].name
+            setWinner(winner + ' wins!')
         } else {
-            winner = heroes[0].name
+            winner = heroes[1].name
+            setWinner(winner + ' wins!')
         }
-
-        //Display winner and win stats
-
+        setStats(`${hero1}/100 vs. ${hero2}/100`)
     } 
-
-
-    const [winner, setWinner] = useState(false)
-
-
 
     return (
         <div className= 'winner'>
             <button onClick = {displayPowerStats}>Display Winner</button>
-           <p>{winner} </p>
+            <div>
+                <p>{winner}</p>
+                <p>{stats}</p>
+           </div>
         </div>
     )
-
 }
 
 export default Winner

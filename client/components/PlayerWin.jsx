@@ -6,14 +6,19 @@ import { getSuperhero } from '../api'
 
 
 function PlayerWin () {
-const [superheroes, setSuperheroes] = useState(null)
+  const [superheroes, setSuperheroes] = useState(null)
   const [error, setError] = useState(null)
+  const [winner, setWinner] = useState(null)
+  const [stats, setStats] = useState(null)
 
   const loadSuperheroData = () => {
+    
     Promise.all([
       getSuperhero(),
       getSuperhero()
     ]).then(both => {
+      setWinner(null)
+      setStats(null)
       setError(null)
       setSuperheroes(both)
     }).catch(e => {
@@ -34,9 +39,9 @@ const [superheroes, setSuperheroes] = useState(null)
   
   return (
     <>
-<div className="buttonContainer">
-<button onClick={loadSuperheroData}>{`Let's Go`}</button>
-  </div><br></br>
+    <div className="buttonContainer">
+        <button onClick={loadSuperheroData}>{`Let's Go`}</button>
+    </div><br></br>
 
     <div className="grid">
 
@@ -44,7 +49,7 @@ const [superheroes, setSuperheroes] = useState(null)
       <Player hero={superheroes[0]}/>
       </div>
       <div className="winner">
-      <Winner heroes={superheroes}/>
+      <Winner heroes={superheroes} winner={winner} setWinner={setWinner} stats={stats} setStats={setStats}/>
       </div>
       <div className="player">
       <Player hero={superheroes[1]}/>
