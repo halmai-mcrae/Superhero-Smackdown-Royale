@@ -24,8 +24,8 @@ const [superheroes, setSuperheroes] = useState(null)
   if (superheroes == null) {
     
     return <>
-          <button onClick={loadSuperheroData}>{`Let's Go`}</button>
-          <p>Loading...</p>
+          <button className='letsGo' onClick={loadSuperheroData}>{`Let's Go`}</button>
+          
     </>
   }
 
@@ -35,19 +35,17 @@ const [superheroes, setSuperheroes] = useState(null)
   
   return (
     <>
-<div className="buttonContainer">
-<button onClick={loadSuperheroData}>{`Let's Go`}</button>
+<div>
+<button className="letsGo" onClick={loadSuperheroData}>{`Let's Go`}</button>
   </div><br></br>
-
-    <div className="grid">
-
-      <div className="player">
+  <div className="grid">
+  <div className="player">
       <Player hero={superheroes[0]}/>
       </div>
-      <div className="winner">
+      <div>
       <Winner heroes={superheroes}/>
       </div>
-      <div className="player">
+      <div>
       <Player hero={superheroes[1]}/>
       </div>
 

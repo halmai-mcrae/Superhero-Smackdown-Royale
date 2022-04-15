@@ -12,7 +12,7 @@ function App() {
       <Header />
     </div>
       
-    <div className="container">
+    <div className='container'>
       
       <PlayerWin />
     </div>

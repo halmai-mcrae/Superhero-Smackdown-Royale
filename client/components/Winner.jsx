@@ -27,10 +27,12 @@ function Winner (props) {
 
 
     return (
-        <div className= 'winner'>
-            <button onClick = {displayPowerStats}>Display Winner</button>
-           <p>{winner} Wins!</p>
+      <>
+        <div>
+            <button className= 'winner' onClick = {displayPowerStats}>Display Winner</button>
+            <p>{winner} Wins!</p>
         </div>
+        </>
     )
 
 }
