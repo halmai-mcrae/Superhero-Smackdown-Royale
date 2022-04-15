@@ -3,7 +3,8 @@ import React from 'react'
 function Winner (props) {
     
     const heroes = props.heroes
-    const { winner, setWinner, stats, setStats } = props
+    const { winner, setWinner, stats, setStats, display, setDisplay } = props
+    
 
     const displayPowerStats = () => {
         const statArray = heroes.map(element => element.powerstats )
@@ -21,22 +22,21 @@ function Winner (props) {
             winner = heroes[1].name
             setWinner(winner + ' wins!')
         }
-        setStats(`${hero1}/100 vs. ${hero2}/100`)
+        setDisplay(null)
+        const string = `${heroes[0].name}-${hero1}/100
+                        vs.
+                        ${heroes[1].name}-${hero2}/100`
+        setStats(string)
     } 
 
     return (
         <>
         <div className= 'winner'>
-            <button onClick = {displayPowerStats}>Display Winner</button>
+            <button onClick={displayPowerStats}>{display}</button>
             <div>
-                <p>{winner}</p>
+                <p className='name'>{winner}</p>
                 <p>{stats}</p>
-           </div>
-
-        <div>
-            <button className= 'winner' onClick = {displayPowerStats}>Display Winner</button>
-            <p>{winner} Wins!</p>
-        </div>
+          </div>
         </div>
         </>
     )

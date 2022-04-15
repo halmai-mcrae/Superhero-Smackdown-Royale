@@ -7,11 +7,11 @@ function Player(props) {
     <div>
       {hero && (
         <div className="superhero">
-          <h2>{hero.name}</h2>
-          <img src={hero.images.sm} />
-          <div className="stats">
-            <h3>Stats</h3>
-            <ul>
+          <h2 className="hero-name">{hero.name}</h2>
+          <img className="hero-image" src={hero.images.sm} />
+          <div>
+            <h3 className="stats-title">Stats</h3>
+            <ul className="stats">
               <li>Intelligence: {hero.powerstats.intelligence}</li>
               <li>Strength: {hero.powerstats.strength}</li>
               <li>Speed: {hero.powerstats.speed}</li>
