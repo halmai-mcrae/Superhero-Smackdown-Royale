@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import Player from './Player.jsx'
-import Winner from './Winner.jsx'
+
 
 import { getSuperhero } from '../api'
+import Winner from './Winner.jsx'
 
 
 function PlayerWin () {
